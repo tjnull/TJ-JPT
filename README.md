@@ -8,10 +8,12 @@ As a pentester there are many great resources, cheat sheets, and guidelines that
 
  - Notes can be searchable,  copied, tagged and modified either from the applications directly or from your own text editor.
  - Markdown Editor and Reader. Easy to import and export notes to multiple formats. 
+ - Code Block Syntax Highlighting
  - [WebClipper](https://joplinapp.org/clipper/) to save web pages and screenshot from Firefox and Chrome Browser
  - Sync notes on various cloud applications such as NextCloud, DropBox, OneDrive
  - Sync notes on a local file share or WebDav. 
- - Compatible to work on Windows, Linux, MacOS, and on Mobile such as Android/IOS
+ - Compatible to work on Windows, Linux, MacOS, and on Mobile such as Android/IOS.
+.
  
  ## What does the template include?
  - Command Line references.
