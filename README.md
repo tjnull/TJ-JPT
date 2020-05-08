@@ -12,8 +12,12 @@ making it more challenging to transfer there notes and files on their devices. T
 to be able to suit my needs when I am on engagements.
 
 ## A Word of Advice:
-
-This template contains a variety of tools, commands, and resources that I reference from to use for certain cases when I am on a engagement. However, it is important that you learn about these tools and understand the references are being used! Take some time to look over the resources I put in before you start running these tools or commands blindly. If the tool or command does not work the way it should, then take a step back and troubleshoot it. Critical Thinking is a necessary skill that all penetesters need to have when they are assessing a variety of options to establish a clear choice to the issue.  
+This template contains a variety of tools, commands, and resources that I reference from to use for certain cases when 
+I am on an engagement. However, it is important that you learn about these tools and understand the references being 
+used! Take some time to look over the resources I put in before you start running these tools or commands blindly. If 
+the tool or command does not work the way it should, then take a step back and troubleshoot it. **Critical thinking** 
+is a necessary skill that all pentesters need to have when they are assessing a variety of options to make a better 
+informed decision.
 
 ## Features with Joplin:
 - Notes can be searchable, copied, tagged, and modified either from the applications directly or from your text editor.
