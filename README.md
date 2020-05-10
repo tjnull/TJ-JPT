@@ -1,7 +1,7 @@
 # Project TJ-JPT
 
 ## Release Date
-May 8th 2020
+Friday 8th May 2020
 
 ## Introduction
 As a pentester, there are many great resources, cheat sheets, and guidelines that contain a large amount of valuable 
