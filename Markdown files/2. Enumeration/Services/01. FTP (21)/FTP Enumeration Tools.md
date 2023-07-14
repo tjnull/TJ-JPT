@@ -1,7 +1,8 @@
 # FTP Enumeration Tools
 
-### Nmap Enumeration
-```
+## Nmap Enumeration
+
+```sh
 $ ls -lh /usr/share/nmap/scripts/ | grep ftp
 -rw-r--r-- 1 root root 4.5K Oct 12 09:29 ftp-anon.nse
 -rw-r--r-- 1 root root 3.2K Oct 12 09:29 ftp-bounce.nse
@@ -14,14 +15,19 @@ $ ls -lh /usr/share/nmap/scripts/ | grep ftp
 -rw-r--r-- 1 root root 5.7K Oct 12 09:29 tftp-enum.nse
 $ nmap x.x.x.x -p 21 -sV --script=exampleScript1.nse,exampleScript2.nse
 ```
-### Manual Connection
-```
+
+## Manual Connection
+
+```sh
 $ ftp x.x.x.x
 ```
-```
+
+```sh
 $ nc x.x.x. 21
 ```
-### Connect via Browser
-```
+
+## Connect via Browser
+
+```sh
 ftp://x.x.x.x
 ```

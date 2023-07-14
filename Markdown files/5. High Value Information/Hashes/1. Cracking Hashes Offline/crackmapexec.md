@@ -1,6 +1,7 @@
 # crackmapexec
 
 Protocol can be `http`, `ssh`, `mssql`, `winrm`, or `smb`.
+
 ```
 $ crackmapexec <protocol> <target_IP> -u <username> -H <hash>
 ```

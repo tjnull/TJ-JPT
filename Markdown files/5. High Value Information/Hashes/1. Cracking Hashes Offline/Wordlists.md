@@ -1,10 +1,10 @@
 # Wordlists
 
-### Local in Kali: 
+## Local in Kali: 
 
 /usr/share/wordlists
 
-### Other Resources:
+## Other Resources:
 
 Have I been Pwned
 

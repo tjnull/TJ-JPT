@@ -1,7 +1,8 @@
 # SMTP Enumeration Tools
 
-### Nmap Enumeration
-```
+## Nmap Enumeration
+
+```sh
 $ ls -lh /usr/share/nmap/scripts/ | grep smtp
 -rw-r--r-- 1 root root  4309 Oct 12 09:29 smtp-brute.nse
 -rw-r--r-- 1 root root  4769 Oct 12 09:29 smtp-commands.nse
@@ -15,14 +16,16 @@ $ ls -lh /usr/share/nmap/scripts/ | grep smtp
 $ nmap x.x.x.x -p 25 -sV --script=exampleScript1.nse,exampleScript2.nse
 ```
 
-### Manual Connection
-```
+## Manual Connection
+
+```sh
 $ nc -nv x.x.x.x 25
 ```
 
-### Mass email
+## Mass email
 
 If you've collected emails from the target domain, you can use something like the following to send out super simple phishing emails. (Saw this on a HTB machine, keep expectations of success low in the real world)
-```
+
+```sh
 $ while read mail; do swaks –to $mail –from IT@targetdomain.com –header "Subject: Credentials / Errors" –body "goto http://attackerIP/" –server x.x.x.x; done < mails.txt
 ```

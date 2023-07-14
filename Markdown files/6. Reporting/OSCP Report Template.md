@@ -1,6 +1,6 @@
 # <div align="center"> Offensive Security Lab/Exam Penetration Test Report </div>
 
-![OSheader](../_resources/OffensiveSecurity.png)
+![OSheader](OffensiveSecurity.png)
 
 ## <div align="center">  student@emailaddress.com Student-ID </div>
 
@@ -357,6 +357,6 @@ For the exam, I used my Metasploit/Meterpreter allowance on the following machin
 
 <center>
 
-![OSec](../_resources/OSec.png)
+![OSec](OSec.png)
 
 </center>

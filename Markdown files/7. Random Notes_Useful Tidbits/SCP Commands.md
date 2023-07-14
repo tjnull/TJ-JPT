@@ -1,10 +1,10 @@
 # SCP Commands
 
-### Copy to remote server (using PuttySCP):
+## Copy to remote server (using PuttySCP):
 
 `pscp -P 22222 C:\Users\User\<localfile> user@remotehost:/folder/<remote_Directory>`
 
-### Normal SCP:
+## Normal SCP:
 
 Copy from remote server:
 `scp -P 22222 user@myhost:\home\user\<file.exe> C:\Users\Victim`

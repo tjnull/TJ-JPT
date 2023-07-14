@@ -1,17 +1,16 @@
 # Intigriti Bug Bounty Tips
 
-### Find WP login
+## Find WP login
+
 Found credentials but no Wordpress login page?
 
 Go to `/wp-admin/install.php` and WordPress will reveal the exact location!
 
-![INT1](../../../_resources/INT1.png)
+![INT1](INT1.png)
 
 Credit: @sw33tLie
 
----
-
-### 403 Forbidden bpyass:
+## 403 Forbidden bpyass:
 
 Gettting a 403 error?
 
@@ -23,9 +22,7 @@ Try appending `%2e` after the first slash!
 
 Credit: @rex0__
 
----
-
-### Laravel trick:
+## Laravel trick:
 
 Testing a laravel app?
 
@@ -40,21 +37,17 @@ email=victim@mail.com&username=sadvictim
 
 Credit: @atul_hax
 
----
-
-### <% in e-mails:
+## <% in e-mails:
 
 Testing for injections in e-mails?
 
 Check the e-mail source code for literal characters or evaluated payloads & use basic locators such as `<%`.
 
-![INT2](../../../_resources/INT2.png)
+![INT2](INT2.png)
 
 Credit: @ngkogkos
 
----
-
-### Unicode WAF evasion:
+## Unicode WAF evasion:
 
 Use invalid unicode characters to bypass the WAF! Spice up your XSS payloads with characters like `\uffff`
 
@@ -64,9 +57,7 @@ Use invalid unicode characters to bypass the WAF! Spice up your XSS payloads wit
 
 Credit: @holme_sec
 
----
-
-### Favicon has recon:
+## Favicon has recon:
 
 Did you know you can use favicon hashes to discover assets and fingerprint technologies on websites like <span style="color:red">Shodan</span> and <span style="color:red">Binaryedge</span>?
 
@@ -80,9 +71,7 @@ shodan : http.favicon.hash: 1278323681
 
 Credit: @kalimer0x00
 
----
-
-### Predict URL shortners:
+## Predict URL shortners:
 
 <http://urlte.am> bruteforces url shorteners, and makes it easier to do recon and find secrets by bruteforcing the most common URL shortners.
 
@@ -93,9 +82,7 @@ e.g. 13371337 = U6uJ
 
 Credit: gmbtbpvvshezrobb
 
----
-
-### From XSS to SSRF:
+## From XSS to SSRF:
 
 Got XSS on a site that uses caching? Try upgrading that to SSRF through Edge Side Include Injection with this payload:
 
@@ -105,9 +92,7 @@ Use it to bypass cookie restrictions, XSS filters & more!
 
 Credit: @georgeomnet
 
----
-
-### Blind XSS in JS frameworks:
+## Blind XSS in JS frameworks:
 
 Testing applications using <span style="color:red">Angular</span> or <span style="color:red">Vue.js</span>? Don't forget to wrap your build XSS payloads in a template injection payload, e.g.:
 
@@ -117,9 +102,7 @@ Not a lot of people test this!
 
 Credit: @JR0ch17
 
----
-
-### Get source code of Electron apps:
+## Get source code of Electron apps:
 
 When working on Electron apps, try decompiling them with this command:
 
@@ -129,20 +112,16 @@ It gets a lot easier to hack apps with their source code!
 
 Credit: @spaceraccoonsec
 
----
-
-### Burp's HTTP History:
+## Burp's HTTP History:
 
 Encounter an odd ID or API?
 Always do a search in your Burp History. It might be used elsewhere!
 
-![INT3](../../../_resources/INT3.png)
+![INT3](INT3.png)
 
 Credit: @alxbrsn
 
----
-
-### Guessing Subdomains:
+## Guessing Subdomains:
 
 Run subdomain discovery on domains owned by the target company but out-of-scope, use the result as a subdomain wordlist for in-scope domains.
 
@@ -152,20 +131,15 @@ Run subdomain discovery on domains owned by the target company but out-of-scope,
 
 Credit: @healthyoulet
 
----
-
-### SSO Redirects
+## SSO Redirects
 
 Don't trust SSO implementations, if you face a target with 302 redirect to SSO pick a wordlist and <span style="color:red">scan folders/files before redirect</span>, you will find reachable stuff and data makes SSO useless. 
 
 Credit: @Th3G3nt3lman
 
----
-
-### Hidden parameter trick
+## Hidden parameter trick
 
 Scour JavaScript files for variable names then try each of them as a GET/POST parameters to uncover hidden parameters. This often results in XSS!
-
 
 <span style="color:red">see</span> `var siteKey = "Uqxf9TX"`
 
@@ -173,9 +147,7 @@ Scour JavaScript files for variable names then try each of them as a GET/POST pa
 
 Credit: @hakluke
 
----
-
-### Don't forget the `/`
+## Don't forget the `/`
 
 When fuzzing for directories, make sure you append a `/` to your wordlist items. This often leads to directory listings!
 
@@ -184,9 +156,7 @@ When fuzzing for directories, make sure you append a `/` to your wordlist items.
 
 Credit: @stanfaas
 
----
-
-### Domain whitelist bypass
+## Domain whitelist bypass
 
 Need to bypass domain validation?
 
@@ -198,9 +168,7 @@ Example: `^http(s)?:\/\/[a-z]+.target.com$`
 
 Credit: @filedescriptor
 
----
-
-### Bypass SSRF Protection
+## Bypass SSRF Protection
 
 The number of <span style="color:red">zeros</span> in `http://127.0.0.1` doesn't matter
 - `http://127.1`
@@ -209,9 +177,7 @@ The number of <span style="color:red">zeros</span> in `http://127.0.0.1` doesn't
 
 Credit: @Naategh_
 
----
-
-### Authorization bypass
+## Authorization bypass
 
 Add multiple ID's to HTTP requests. This sometimes bypasses authorization checks for the 2nd ID!
 
@@ -223,9 +189,7 @@ Add multiple ID's to HTTP requests. This sometimes bypasses authorization checks
 
 Credit: @pxmme1337
 
----
-
-### Open Redirect Bypass
+## Open Redirect Bypass
 
 Try to bypass URL whitelists using Turkish characters like `ğ` (g with breve).
 
@@ -235,9 +199,7 @@ Becomes:
 
 `https://evil.com?.target.com`
 
----
-
-### Target based wordlist:
+## Target based wordlist:
 
 - Take all your subdomains for your target
 - Split at the "."s and "-"s, the `uniq` them
@@ -246,6 +208,3 @@ Becomes:
 Use the custom list to bruteforce everything from hidden subdomains to weak credentials!
 
 Credit: @Rhynorater
-
-
-

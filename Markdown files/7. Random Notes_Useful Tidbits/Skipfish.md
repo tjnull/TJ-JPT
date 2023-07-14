@@ -2,7 +2,7 @@
 
 https://tools.kali.org/web-applications/skipfish
 
-### Brute forcing and updating Wordlists
+## Brute forcing and updating Wordlists
 
 Predefined wordlists can be found in `/usr/share/skipfish/dictionaries`
 
@@ -27,14 +27,14 @@ Other flags:
 -X = don’t include/reject URLs in the scan 
 -D scan additional hosts or scan wildcard domains 
 
-### Scan without brute forcing:
+## Scan without brute forcing:
 
 `skipfish -LY -o /root/Desktop/skipfish http://target.com`
 -L = No keyword learning
 -Y= no extension brute forcing 
 
 
-### Proxy SkipFish through Burp:
+## Proxy SkipFish through Burp:
 
 Configuring SkipFish:
 
@@ -50,6 +50,6 @@ Since the Burp Suite Proxy will be mimicking a real web server in our setup, it 
 - If you are testing https://www.example.com, then the proxy needs to listen on port 443.
 - If you are testing http://www.example.com:8080, then the proxy needs to listen on port 8080.
 
-![SFBurp](../_resources/SFBurp.png)
+![SFBurp](SFBurp.png)
 
 From <https://www.vanstechelman.eu/security/using_skipfish_through_burpsuite> 

@@ -14,8 +14,7 @@ The Redis security model is: “it’s totally insecure to let untrusted clients
 
 The problem is that, whatever we state in our security page, there are a lot of Redis instances exposed to the internet unintentionally. Not because the use case requires outside clients to access Redis, but because nobody bothered to protect a given Redis instance from outside accesses via fire walling, enabling AUTH, binding it to 127.0.0.1 if only local clients are accessing it, and so forth.
 
-Let’s crack Redis for fun and no profit at all given I’m the developer of this thing
-===
+## Let’s crack Redis for fun and no profit at all given I’m the developer of this thing
 
 In order to show the Redis “security model” in a cruel way, I did a quick 5 minutes experiment. In our security page we hint at big issues if Redis is exposed. You can read: “However, the ability to control the server configuration using the CONFIG command makes the client able to change the working directory of the program and the name of the dump file. This allows clients to write RDB Redis files at random paths, that is a security issue that may easily lead to the ability to run untrusted code as the same user as Redis is running”.
 
@@ -93,8 +92,7 @@ Salvatores-MacBook-Air.local
 
 Yes. I successfully gained access as the Redis user, with a proper shell, in like five seconds. Courtesy of a Redis instance unprotected being, basically, an on-demand-write-this-file server, and in this case, by ssh not being conservative enough to deny access to a file which is all composed of corrupted keys but for one single entry. However ssh is not the problem here, once you can write files, even with binary garbage inside, it’s a matter of time and you’ll gain access to the system in one way or the other.
 
-How to fix this crap?
-===
+## How to fix this crap?
 
 We say Redis is insecure if exposed, and the security model of Redis is to be accessed only be authorized and trusted clients. But this is unfortunately not enough. Users will still run it unprotected, and even worse, there is a tension between making Redis more secure *against* deployment errors, and making Redis easy to use for people just using it for development or inside secure environments where limits are not needed.
 
@@ -110,8 +108,7 @@ Basically the problem is finding a compromise between the following three things
 
 3. My bias towards “1” instead of “2” because RTFM.
 
-Users ACLs to mitigate the problem
-===
+## Users ACLs to mitigate the problem
 
 One way to add redundancy to the “isolation” concept of Redis from the outside world is to use the AUTH command. It’s very simple, you configure Redis in order to require a password, and clients authenticate via the AUTH command by using the configured password. The mechanism is trivial: passwords are not hashed, and are stated in cleartext inside the configuration file and inside the application, so it’s like a shared secret.  
 

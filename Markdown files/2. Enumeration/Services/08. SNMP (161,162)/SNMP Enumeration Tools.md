@@ -1,13 +1,15 @@
 # SNMP Enumeration Tools
 
-### SNMP Walk: 
+## SNMP Walk: 
+
 ```
 $ snmpwalk -c public -v1 ipaddress 1
 $ snmpwalk -c private -v1 ipaddress 1
 $ snmpwalk -c manager -v1 ipaddress 1
 ```
 
-### Nmap Enumeration
+## Nmap Enumeration
+
 `nmap 172.21.0.0 -Pn -sU -p 161 --script=`
 
 ```
@@ -27,7 +29,8 @@ $ ls -lh /usr/share/nmap/scripts/ | grep snmp
 $ nmap x.x.x.x -p 161,162 -sV --script=exampleScript1.nse,exampleScript2.nse
 ```
 
-### Metasploit aux modules
+## Metasploit aux modules
+
 ```
  auxiliary/scanner/misc/oki_scanner                                    
  auxiliary/scanner/snmp/aix_version                                   
@@ -46,17 +49,20 @@ $ nmap x.x.x.x -p 161,162 -sV --script=exampleScript1.nse,exampleScript2.nse
  auxiliary/scanner/snmp/snmp_login                                     
 ```
 
-### Onesixtyone
+## Onesixtyone
+
 ```
 $ onesixtyone -c /usr/share/doc/onesixtyone/dict.txt x.x.x.x
 ```
 
-### Snmp-check
+## Snmp-check
+
 ```
 $ snmp-check x.x.x.x -c public
 ```
 
-### Impacket
+## Impacket
+
 ```
 python3 samdump.py SNMP x.x.x.x
 ```

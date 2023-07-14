@@ -1,6 +1,7 @@
 # POP3 Enumeration Tools
 
-### Nmap Enumeration
+## Nmap Enumeration
+
 ```
 $ ls -lh /usr/share/nmap/scripts/ | grep pop
 -rw-r--r-- 1 root root  3953 Oct 12 09:29 pop3-brute.nse
@@ -9,11 +10,14 @@ $ ls -lh /usr/share/nmap/scripts/ | grep pop
 $ nmap x.x.x.x -p 110 -sV --script=exampleScript1.nse,exampleScript2.nse
 ```
 
-### Manual Connection
+## Manual Connection
+
 ```
 $ telnet x.x.x.x
 ```
+
 or 
+
 ```
 $ nc -nv x.x.x.x
 ```

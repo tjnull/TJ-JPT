@@ -2,4 +2,4 @@
 
 Quick determination of template language being used:
 
-![SSTI](../../../_resources/SSTI.png)
+![SSTI](SSTI.png)

@@ -48,10 +48,10 @@ Cracking ASREP Keys
 - `john --format=krb5asrep --wordlist=<passwords_file asrep-key.txt`
 
 Cracking an unshadowed file:
- `unshadow passwd shadow > unshadowed`
- `john -incremental -users:<user list> <file to crack>`
- i.e.:
- `john -incremental -users:victim unshadowed`
+`unshadow passwd shadow > unshadowed`
+`john -incremental -users:<user list> <file to crack>`
+i.e.:
+`john -incremental -users:victim unshadowed`
 
 Show cracked passwords:
 `john --show unshadowed`

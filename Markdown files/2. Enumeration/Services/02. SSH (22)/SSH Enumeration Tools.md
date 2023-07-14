@@ -1,7 +1,8 @@
 # SSH Enumeration Tools
 
-### Nmap Enumeration
-```
+## Nmap Enumeration
+
+```sh
 $ ls -lh /usr/share/nmap/scripts/ | grep ssh
 -rw-r--r-- 1 root root 5.3K Oct 12 09:29 ssh2-enum-algos.nse
 -rw-r--r-- 1 root root 1.2K Oct 12 09:29 ssh-auth-methods.nse
@@ -12,11 +13,13 @@ $ ls -lh /usr/share/nmap/scripts/ | grep ssh
 -rw-r--r-- 1 root root 1.4K Oct 12 09:29 sshv1.nse
 $ nmap x.x.x.x -p 22 -sV --script=exampleScript1.nse,exampleScript2.nse
 ```
-### Manual Connection
 
-```
+## Manual Connection
+
+```sh
 $ nc -nv x.x.x.X 22 # Might give header
 ```
-```
+
+```sh
 $ ssh x.x.x.x -p22
 ```

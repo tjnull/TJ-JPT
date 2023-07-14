@@ -1,12 +1,12 @@
 # Powershell tidbits
 
-### List Drives
+## List Drives
 
 `get-psdrive -psprovider filesystem`
 
 - From <https://www.thewindowsclub.com/list-drives-using-command-prompt-powershell-windows> 
 
-### Bypass Execution Policy
+## Bypass Execution Policy
 
 https://blog.netspi.com/15-ways-to-bypass-the-powershell-execution-policy/
 
@@ -16,8 +16,7 @@ Scenario: Workstation COE with local admin rights
 - In this example I’ve shown how to change the execution policy for the current user’s environment persistently by modifying a registry key directly.
 `HKEY_CURRENT_USER\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell`
 
-![BEP](../_resources/BEP.png)
+![BEP](BEP.png)
 
----
 
 #powershell 

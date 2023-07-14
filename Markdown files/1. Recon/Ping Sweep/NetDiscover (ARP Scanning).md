@@ -1,21 +1,22 @@
 # NetDiscover (ARP Scanning)
 
-
-```
+```sh
 netdiscover -i eth0
 ```
+
 or
-```
+
+```sh
 netdiscover -r x.x.x.0/24
 ```
 
-### Dsniff Arpspoof
+## Dsniff Arpspoof
 
 First enable Linux box to act as a router:
 
 `echo 1 > /proc/sys/net/ipv4/ip_forward`
 
-Then tun `arpspoof`:
+Then run `arpspoof`:
 
 `arpspoof -i <interface> -t <target> -r <host>`
 

@@ -1,7 +1,8 @@
 # DNS Enumeration Tools
 
-### Nmap Enumeration
-```
+## Nmap Enumeration
+
+```sh
 $ ls -lh /usr/share/nmap/scripts/ | grep dns
 -rw-r--r-- 1 root root  1499 Oct 12 09:29 broadcast-dns-service-discovery.nse
 -rw-r--r-- 1 root root  5329 Oct 12 09:29 dns-blacklist.nse
@@ -26,8 +27,9 @@ $ ls -lh /usr/share/nmap/scripts/ | grep dns
 $ nmap x.x.x.x -v -p 53 --script=exampleScript1.nse,exampleScript2.nse
 ```
 
-### Leaking Hostname
-```
+## Leaking Hostname
+
+```sh
 $ nslookup
 > server <target_IP>
 Default server: <target_IP>

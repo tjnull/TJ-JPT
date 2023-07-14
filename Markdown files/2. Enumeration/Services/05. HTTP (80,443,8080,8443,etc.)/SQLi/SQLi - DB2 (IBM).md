@@ -1,6 +1,7 @@
 # SQLi - DB2 (IBM)
 
-### Pentest Monkey DB2 SQL Injection Cheat Sheet
+## Pentest Monkey DB2 SQL Injection Cheat Sheet
+
 - http://pentestmonkey.net/cheat-sheet/sql-injection/db2-sql-injection-cheat-sheet
 
 | Enumerate    | Command                 |
@@ -25,7 +26,8 @@
 |Casting|	`SELECT cast(’123′ as integer) FROM sysibm.sysdummy1;`<br>`SELECT cast(1 as char) FROM sysibm.sysdummy1;`|
 |String Concatenation|	`SELECT ‘a’ concat ‘b’ concat ‘c’ FROM sysibm.sysdummy1;` — returns ‘abc’<br>	`select ‘a’ || ‘b’ from sysibm.sysdummy1;` — returns ‘ab’|
 
-### Security Et Alii
+## Security Et Alii
+
 - https://securityetalii.es/2012/05/20/db2-sql-injection-cheat-sheet/
 
 `*` indicates different from PentestMonkey (identical items have been removed from the table below)

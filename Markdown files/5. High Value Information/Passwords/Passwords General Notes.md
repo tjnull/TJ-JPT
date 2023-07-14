@@ -1,1 +1,1 @@
-# Any passwords or hashs that you fine should be documented here. Include steps on how you were able to obtain them from your target:
+# Any passwords or hashs that you find should be documented here. Include steps on how you were able to obtain them from your target:

