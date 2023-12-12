@@ -1,58 +1,23 @@
-# Project TJ-JPT
+# Project Information and Changelog
 
-## Release Date
-May 8th 2020
+## Overview
 
-## Introduction
-As a pentester, there are many great resources, cheat sheets, and guidelines that contain a large amount of valuable 
-information. However, it can be frustrating and time-consuming to find these notes or resources that are scattered all 
-over the place. Not to mention the large amount of notes you have stored locally across your system with several 
-different note-taking tools. In addition, some pentesters could be in assessments that are in a closed environment 
-making it more challenging to transfer there notes and files on their devices. That's when I found [Joplin][Joplin] 
-to be able to suit my needs when I am on engagements.
+This fork presents a unified version of two distinct but related projects in the realm of penetration testing methodologies: the original work by TJNull and the significant fork led by TheGetch. The original project by TJNull, known for its comprehensive approach, can be found at TJNull's Penetration Testing Methodology. TheGetch's fork, notable for its extensive additions and community contributions, is available at TheGetch's Enhanced Penetration Testing Methodology.
 
-## A Word of Advice:
-This template contains a variety of tools, commands, and resources that I reference from to use for certain cases when 
-I am on an engagement. However, it is important that you learn about these tools and understand the references being 
-used! Take some time to look over the resources I put in before you start running these tools or commands blindly. If 
-the tool or command does not work the way it should, then take a step back and troubleshoot it. **Critical thinking** 
-is a necessary skill that all pentesters need to have when they are assessing a variety of options to make a better 
-informed decision.
+The essence of this unification effort is to merge the strengths of both projects, incorporating the detailed enhancements from TheGetch's version into the structured framework established by TJNull.
 
-## Features with Joplin:
-- Notes can be searchable, copied, tagged, and modified either from the applications directly or from your text editor.
-- Markdown Editor and Reader. Easy to import and export notes to multiple formats. 
-- [WebClipper][WebClipper] to save web pages and screenshot from Firefox and Chrome Browser
-- Sync notes on various cloud applications such as NextCloud, Dropbox, OneDrive
-- Sync notes on a local file share or WebDav. 
-- Compatible to work on Windows, Linux, macOS, iOS, and Android
+## Updates and Enhancements
 
-## What does the template include?
-- Command line references.
-- Personal notes that I left as reminders when I am assessing a target.
-- PWK Report in Markdown (Can be exported into a `PDF`)
+- **Integration of Content:** Merging the content from TheGetch's fork with TJNull's original methodology to create a comprehensive and enriched resource.
 
-## Instructions
-**NOTE:** You must have Joplin installed on your system.
-1. Open Joplin
-2. Click File and select `Import`
-3. Select `JEX - Joplin Export File`
-4. Locate the pentest template and it should appear in Joplin
+- **Export to Markdown:** Conversion of all notes into Markdown format, facilitating usage within Obsidian (and others), a popular tool for knowledge management and note-taking.
 
-## Feedback, Suggestions and Contributions
-Although this template is just the start there can always be room to add new tips, resources, or guides for other 
-people to use in this template. Feel free to post any suggestions that you may have or want to include by submitting 
-an issue in the repo. 
+- **Format and Parameter Corrections:** Implementation of format adjustments for improved clarity and consistency, along with updates to various parameters to ensure relevancy with current penetration testing practices.
 
-## Credit
-- A huge shout out goes to [James Hall][James Hall] originally creating his own pentesting template in Cherry Tree 
-that inspired me to build mine in Joplin. You can find it [here][Github].
-- [Offensive Security][Offensive Security]: For reviewing the template and giving me feedback on things to 
-add/improve on the template.
-- The developers at [Joplin][Joplin] for making an awesome opensource note-taking tool.
- 
-[Joplin]:               https://joplinapp.org/
-[WebClipper]:           https://joplinapp.org/clipper/
-[James Hall]:           https://twitter.com/411Hall
-[Github]:               https://411hall.github.io/OSCP-Preparation/
-[Offensive Security]:   https://www.offensive-security.com/
+- **Addition of New Information:** Inclusion of new, practical information to enhance the depth and utility of the methodology.
+
+- **Reorganization of Target Folders/Notes:** A new structure has been implemented to segregate target folders and notes. This reorganization aims to simplify access and differentiate these elements from the main body of notes, thereby enhancing usability and navigation within the project.
+
+## Acknowledgements
+
+Credit is due to [TJNull](https://github.com/tjnull/TJ-JPT) for the work that has shaped this field. The enhancements and community contributions, particularly those spearheaded by [TheGetch](https://github.com/TheGetch/Penetration-Testing-Methodology), have been instrumental in evolving this resource into a more dynamic and current tool. This [unified project](https://github.com/shr3kull/Penetraion-Testing-Methodology) represents a collaborative effort to bring together the best of both repos, offering a streamlined and comprehensive resource for penetration testers and security enthusiasts.
