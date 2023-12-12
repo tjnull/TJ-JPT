@@ -6,7 +6,8 @@
 	1. Executive Summary
 	2. Technical Summary
 	3. Detail Report of findings
-	4. Recommendations for remediation (If possible)
+	4. Include references from MITRE ATT&CK (https://attack.mitre.org/)
+	5. Recommendations for remediation (If possible)
 
 
 
@@ -18,3 +19,5 @@ Resources:
 Public Pentesting Reports: 
 
 - https://github.com/juliocesarfort/public-pentesting-reports
+- https://www.hackthebox.com/storage/press/samplereport/sample-penetration-testing-report-template.pdf
+- https://www.offsec.com/pwk-online/OSCP-Exam-Report.docx
